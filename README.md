@@ -22,3 +22,11 @@ Run the docker image:
 DATASET_DIR=~/datasets/physionet
 docker run -it --rm -v $DATASET_DIR:/data wfdb-docker wfdb2mat -r /data/s2011 -f 0 -t 5
 ```
+
+Or if you don't want to build the image locally, you can pull it from dockerhub:
+
+```bash
+docker pull ghcr.io/spagnolog/wfdb-docker:main
+docker run -it --rm  -v /home/spagnologasper/Documents/faks/obss/datasets/physionet.org/files/ltstdb/1.0.0:/data ghcr.io/spagnolog/wfdb-docker:main wfdb2mat -r /data/s20221 -f 0 -t 5
+```
+
