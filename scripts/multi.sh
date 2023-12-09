@@ -13,7 +13,6 @@ fi
 
 FILES="*.dat"
 
-
 for f in $FILES
 do
   f=$(basename $f)
@@ -22,7 +21,7 @@ do
   echo  $f 
   ./qrs_detect -r $f
 
-  docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main bxb -r "/data/$f" -a atr qrs -l eval1.txt eval2.txt
- done
+  docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main bxb -r "/data/$f" -a atr qrs -l /data/eval1.txt /data/eval2.txt
+done
 
-docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main sumstats eval1.txt eval2.txt >results.txt 
+docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main sumstats /data/eval1.txt /data/eval2.txt > /data/results.txt 
