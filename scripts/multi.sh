@@ -24,4 +24,4 @@ do
   docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main bxb -r "/data/$f" -a atr qrs -l /data/eval1.txt /data/eval2.txt
 done
 
-docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main sumstats /data/eval1.txt /data/eval2.txt > /data/results.txt 
+docker run -it --rm -v "$(pwd)":/data ghcr.io/spagnolog/wfdb-docker:main sumstats /data/eval1.txt /data/eval2.txt > results.txt 
